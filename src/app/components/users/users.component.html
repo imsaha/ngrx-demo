@@ -1,0 +1,13 @@
+<!-- <button (click)="handleUsersLoad()">Load users</button> -->
+<div>
+  <button (click)="previousPage()" [disabled]="!(pageIndex > 1)">
+    Previous page
+  </button>
+  <button (click)="nextPage()">Next page</button>
+
+  <h3>Page Number : {{ pageIndex < 1 ? 1 : pageIndex }}</h3>
+
+  <ul *ngFor="let user of users$ | async">
+    <li>Name: {{ user.name }}, Email : {{ user.email }}</li>
+  </ul>
+</div>
